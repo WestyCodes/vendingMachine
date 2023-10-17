@@ -9,7 +9,12 @@ const moneyFloat = 100.0;
 
 class vendingMachine {
     constructor(items, money) {
-        this.items = items;
+        this.items = items.map((item) => ({
+            name: items.name,
+            code: item.code,
+            quantity: item.quantity,
+            price: item.price,
+        }));
         this.money = money;
     }
     vend(selection, payment) {
@@ -50,9 +55,10 @@ class vendingMachine {
 }
 
 const ColaVendingMachine = new vendingMachine(itemArray, moneyFloat);
-
+console.log('items Array before', itemArray);
 ColaVendingMachine.vend('A05', 0.99);
 ColaVendingMachine.vend('A04', 3.99);
 ColaVendingMachine.vend('A055', 1.09);
 ColaVendingMachine.vend('A01', 0.2);
 ColaVendingMachine.vend('A01', 0.6);
+console.log('items Array after', itemArray);
