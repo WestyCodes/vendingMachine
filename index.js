@@ -28,5 +28,9 @@ class vendingMachine {
         if (findSelection.price > payment) {
             return console.log(`Not Enough Money!`);
         }
+
+        if (findSelection.quantity === 0) {
+            return console.log(`${findSelection.name}: Out of Stock!`);
+        }
     }
 }
