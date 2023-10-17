@@ -12,4 +12,16 @@ class vendingMachine {
         this.items = items;
         this.money = money;
     }
+    vend(selection, payment) {
+        const findSelection = this.items.find(
+            (item) => item.code === selection
+        );
+        if (findSelection === undefined) {
+            return console.log(
+                `Invalid Selection! : Money in vending machine = ${this.money.toFixed(
+                    2
+                )}`
+            );
+        }
+    }
 }
