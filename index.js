@@ -16,12 +16,17 @@ class vendingMachine {
         const findSelection = this.items.find(
             (item) => item.code === selection
         );
+
         if (findSelection === undefined) {
             return console.log(
                 `Invalid Selection! : Money in vending machine = ${this.money.toFixed(
                     2
                 )}`
             );
+        }
+
+        if (findSelection.price > payment) {
+            return console.log(`Not Enough Money!`);
         }
     }
 }
