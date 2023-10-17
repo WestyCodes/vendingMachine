@@ -48,3 +48,11 @@ class vendingMachine {
         }
     }
 }
+
+const ColaVendingMachine = new vendingMachine(itemArray, moneyFloat);
+
+ColaVendingMachine.vend('A05', 0.99);
+ColaVendingMachine.vend('A04', 3.99);
+ColaVendingMachine.vend('A055', 1.09);
+ColaVendingMachine.vend('A01', 0.2);
+ColaVendingMachine.vend('A01', 0.6);
