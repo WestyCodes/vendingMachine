@@ -32,5 +32,19 @@ class vendingMachine {
         if (findSelection.quantity === 0) {
             return console.log(`${findSelection.name}: Out of Stock!`);
         }
+
+        if (payment >= findSelection.price) {
+            const change = payment - findSelection.price;
+
+            change === 0
+                ? console.log(`Vending ${findSelection.name}`)
+                : console.log(
+                      `Vending ${findSelection.name} with ${change.toFixed(
+                          2
+                      )} change.`
+                  );
+            this.money += findSelection.price;
+            findSelection.quantity -= 1;
+        }
     }
 }
